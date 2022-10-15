@@ -106,25 +106,27 @@
             $mail->SMTPSecure='tls';
 
             // h-hotel account
-            $mail->Username='email account';
-            $mail->Password='email password';
+            $mail->Username='sekolahkarijeneng@gmail.com';
+            $mail->Password='cphnjcbygasymxiy';
 
             // send by h-hotel email
-            $mail->setFrom('email', 'Password Reset');
+            $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng.com');
             // get email from input
             $mail->addAddress($_POST["email"]);
             //$mail->addReplyTo('lamkaizhe16@gmail.com');
 
             // HTML body
             $mail->isHTML(true);
-            $mail->Subject="Recover your password";
+            $mail->Subject="Memulihkan Kata Sandi Anda";
             $mail->Body="<b>Dear User</b>
-            <h3>We received a request to reset your password.</h3>
-            <p>Kindly click the below link to reset your password</p>
-            http://localhost/login-System/Login-System-main/reset_psw.php
+            <h3>Kami menerima anda meminta untuk mengubah kata sandi.</h3>
+            <p>Silahkan klik link dibawah ini ntuk memulihkan akun anda.</p>
+
+            <p>http://localhost/haaaaa/login1/reset_psw.php</p>
+
             <br><br>
-            <p>With regrads,</p>
-            <b>Programming with Lam</b>";
+            <p>Hormat Kami</p>
+            <b>Sekolah Kari Jeneng</b>";
 
             if(!$mail->send()){
                 ?>

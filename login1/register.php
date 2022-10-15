@@ -36,9 +36,9 @@
                     $mail->SMTPSecure='tls';
     
                     $mail->Username='sekolahkarijeneng@gmail.com';
-                    $mail->Password='sekolahkarijeneng3320';
+                    $mail->Password='cphnjcbygasymxiy';
     
-                    $mail->setFrom('sekolahkarijeneng@gmail.com', 'Sekolah Kari Jeneng');
+                    $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng');
                     $mail->addAddress($_POST["email"]);
     
                     $mail->isHTML(true);
@@ -152,7 +152,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <input type="submit" value="Register" name="register">
                             </div>
-                    </div>
+                        </div>
                     </form>
                 </div>
             </div>
