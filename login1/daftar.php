@@ -20,7 +20,7 @@
             }else{
                 $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-                $result = mysqli_query($connect, "INSERT INTO login (email, password, status) VALUES ('$email', '$password_hash', 0)");
+                $result = mysqli_query($connect, "INSERT INTO login (username, email, password, status) VALUES ('$email', '$password_hash', 0)");
     
                 if($result){
                     $otp = rand(100000,999999);
