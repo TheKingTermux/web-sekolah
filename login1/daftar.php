@@ -38,7 +38,7 @@
                     $mail->Username='sekolahkarijeneng@gmail.com';
                     $mail->Password='cphnjcbygasymxiy';
     
-                    $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng');
+                    $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng.com');
                     $mail->addAddress($_POST["email"]);
     
                     $mail->isHTML(true);
@@ -59,7 +59,7 @@
                                 ?>
                                 <script>
                                     alert("<?php echo "Daftar berhasil, Kode Verifikasi telah dikirimkan ke " . $email ?>");
-                                    window.location.replace('verification.php');
+                                    window.location.replace('verifikasi.php');
                                 </script>
                                 <?php
                             }
@@ -77,37 +77,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Halaman Daftar</title>
-    <link rel="stylesheet" href="daftar.css">
+    <link rel="stylesheet" href="./css/daftar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
+    <link rel="icon" href="../image/register.png">
 </head>
 
 <body>
     <div class="box">
         <div class="form">
-            <form action="#" method="POST" name="register">
+            <form action="#" method="POST">
                 <h2>Cie Yg Mau Daftar</h2>
-                <div class="inputBox">
-                    <input type="username" id="username"  name="username" required="required">
-                    <span>Username</span>
-                    <i></i>
-                </div>
-                <div class="inputBox">
-                    <input type="text" id="email_address" name="email" required="required">
-                    <span>Email</span>
-                    <i></i>
-                </div>
-                <div class="inputBox">
-                    <input type="password" id="password"  name="password" required="required">
-                    <span>Password</span>
-                    <i></i>
-                </div>
-                <div class="checkBox">
-                    <input type="checkbox" onclick="myFunction()">
-                    <span>Tampilkan Password</span>
-                </div>
-                <input type="submit" value="Daftar" name="register">
+                    <div class="inputBox">
+                        <input type="username" id="username"  name="username" required="required" autocomplete="off">
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="email_address" name="email" required="required" autocomplete="off">
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="password"  name="password" required="required" autocomplete="off">
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+                    <div class="checkBox">
+                        <input type="checkbox" onclick="myFunction()">
+                        <span>Tampilkan Password</span>
+                    </div>
+                        <input type="submit" value="Daftar" name="register">
+                        <br>
+                    <div class="links">
+                        <p>Sudah mempunyai akun? </p>
+                        <br>  
+                        <a align="center" href="masuk.php">Masuk disini</a>
+                    </div>
                 </div>
             </form>
         </div>
@@ -115,9 +122,7 @@
 </body>
 
 
-<script>
-function myFunction() {
-
+<script>{
     const toggle = document.getElementById('togglePassword');
     const password = document.getElementById('password');
 
