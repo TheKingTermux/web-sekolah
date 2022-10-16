@@ -28,6 +28,3 @@ First step:
 7) modify the account and password under two file -> recover_psw.php and register.php
 8) now you are ready to run your login system project !
 9) Happy Coding
-
-More details refer to this youtube video with clear explanation
-https://youtu.be/-1SJPDL-9o8
