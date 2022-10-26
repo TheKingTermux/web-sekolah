@@ -3,7 +3,7 @@ session_start()
 ?>
 
 <?php 
-    if(isset($_POST["recover"])){
+    if(isset($_POST["veriftelat"])){
         include('connect/connection.php');
         $email = $_POST["email"];
 
@@ -18,12 +18,6 @@ session_start()
             </script>
             <?php
         }else if($fetch["status"] == 0){
-            ?>
-                <script>
-                    window.location.replace("./popup/password_atv.php");
-                </script>
-            <?php
-        }else{
             // generate token by binaryhexa 
             $token = bin2hex(random_bytes(50));
 
@@ -54,10 +48,10 @@ session_start()
 
             // HTML body
             $mail->isHTML(true);
-            $mail->Subject="Memulihkan Kata Sandi Anda";
+            $mail->Subject="Memverifikasi Akun Anda yang Terlambat";
             $mail->Body="<b>Dear User</b>
-            <h3>Kami menerima anda meminta untuk mengubah kata sandi.</h3>
-            <p>Silahkan masukkan Kode verifikasi pemulihan akun anda $otp</p>
+            <h3>Kami menerima anda meminta untuk Memverifikasi Akun Anda yang Terlambat diverifikasi.</h3>
+            <p>Silahkan masukkan Kode verifikasi berikut $otp</p>
             <br><br>
             <p>Hormat Kami</p>
             <b>Sekolah Kari Jeneng</b>";
@@ -71,7 +65,7 @@ session_start()
             }else{
                 ?>
                     <script>
-                        window.location.replace("verifikasi_lupa_password.php");
+                        window.location.replace("verifikasi_telat.php");
                     </script>
                 <?php
             }
@@ -86,7 +80,7 @@ session_start()
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Pemulihan Kata Sandi</title>
+    <title>Verifikasi Telat</title>
     <link rel="stylesheet" href="./css/lupa_password.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -98,21 +92,16 @@ session_start()
     <div class="box">
         <div class="form">
             <form action="#" method="POST">
-                <h2>Lali password barang kah</h2>
+                <h2>Verifikasi kok telat</h2>
                     <div class="inputBox">
                         <input type="text" id="email_address" name="email" required="required" autocomplete="off">
                         <span>Email</span>
                         <i></i>
                     </div>
                     <br>
-                    <input type="submit" value="Pulihkan" name="recover">
+                    <input type="submit" value="Verifikasi" name="veriftelat">
                     <br>
                     <br>
-                    <div class="cr">
-                        <p align="center" color="#28292d">Sudah ingat passwordnya LOL? </p>
-                        <br>  
-                        <a align="center" href="masuk.php">Balek kesini</a>
-                    </div>
                 </form>
         </div>
     </div>

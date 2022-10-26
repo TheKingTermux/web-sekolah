@@ -7,6 +7,11 @@ include('connect/connection.php');
     if(isset($_POST["reset"])){
         include('connect/connection.php');
         $psw = $_POST["password"];
+        $cpsw = $_POST["cpassword"];
+        
+        if($psw !== $cpsw){
+            $errors['password'] = "Password tidak sama";
+        }
 
         $token = $_SESSION['token'];
         $Email = $_SESSION['email'];
@@ -17,19 +22,25 @@ include('connect/connection.php');
         $query = mysqli_num_rows($sql);
   	    $fetch = mysqli_fetch_assoc($sql);
 
+        if($psw !== $cpsw){
+            ?>
+            <script>
+                window.location.replace('./popup/password_pts.php');
+            </script>
+            <?php
+        }
         if($Email){
             $new_pass = $hash;
             mysqli_query($connect, "UPDATE login SET password='$new_pass' WHERE email='$Email'");
             ?>
             <script>
-                window.location.replace("masuk.php");
-                alert("<?php echo "Password anda sudah dipulihkan"?>");
+                window.location.replace("./popup/password_berhasil.php");
             </script>
             <?php
         }else{
             ?>
             <script>
-                alert("<?php echo "Silahkan coba lagi"?>");
+                window.location.replace("./popup/password_err.php");
             </script>
             <?php
         }
@@ -61,25 +72,14 @@ include('connect/connection.php');
                         <span>Password Baru</span>
                         <i></i>
                     </div>
-                    <div class="checkBox">
-                            <input type="checkbox" onclick="myFunction()">
-                            <span>Tampilkan Password</span>
-                        </div>
+                    <div class="inputBox">
+                        <input type="password" id="password"  name="cpassword" required="required" autocomplete="off" autofocus>
+                        <span>Konfirmasi Password Baru</span>
+                        <i></i>
+                    </div>
                     <input type="submit" value="Balikin" name="reset">
                     <br>
                 </form>
         </div>
     </div>
 </body>
-
-<script>{
-    const toggle = document.getElementById('togglePassword');
-    const password = document.getElementById('password');
-
-        if(password.type === "password"){
-            password.type = 'text';
-        }else{
-            password.type = 'password';
-        };
-    }
-</script>

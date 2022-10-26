@@ -15,19 +15,19 @@
                 if($fetch["status"] == 0){
                     ?>
                     <script>
-                        alert("Silahkan verifikasi email terlebih dahulu!");
+                        window.location.replace('./popup/login_sva.php');
                     </script>
                     <?php
                 }else if(password_verify($password, $hashpassword)){
                     ?>
                     <script>
-                        alert("Berhasil masuk");
+                        window.location.replace('./popup/login_berhasil.php');
                     </script>
                     <?php
                 }else{
                     ?>
                     <script>
-                        alert("Email / Password salah, silahkan coba lagi!");
+                        window.location.replace('./popup/login_eps.php');
                     </script>
                     <?php
                 }
@@ -66,35 +66,19 @@
                         <span>Password</span>
                         <i></i>
                     </div>
-                    <div class="checkBox">
-                        <input type="checkbox" onclick="myFunction()">
-                        <span>Tampilkan Password</span>
-                    </div>
+                    <br>
                     <div class="links">
                         <a href="lupa_password.php">Lupa password ya?</a>
                     </div>
                     <input type="submit" value="Masuk" name="login">
                     <br>
+                    <br>
                     <div class="cr">
                         <p align="center" color="#28292d">Tidak mempunyai akun? </p>
-                        <br>  
+                        <br>
                         <a align="center" href="daftar.php">Daftar disini</a>
                     </div>
                 </form>
         </div>
     </div>
 </body>
-
-<script>
-    const toggle = document.getElementById('togglePassword');
-    const password = document.getElementById('password');
-
-    toggle.addEventListener('click', function(){
-        if(password.type === "password"){
-            password.type = 'text';
-        }else{
-            password.type = 'password';
-        }
-        this.classList.toggle('bi-eye');
-    });
-</script>

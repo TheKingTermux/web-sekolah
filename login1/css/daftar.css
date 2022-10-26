@@ -17,7 +17,7 @@
     .box {
         position: relative;
         width: 380px;
-        height: 460px;
+        height: 560px;
         background: #1c1c1c;
         border-radius: 10px;
         overflow: hidden;
@@ -29,7 +29,7 @@
         top: -50%;
         left: -50%;
         width: 380px;
-        height: 460px;
+        height: 560px;
         background: linear-gradient(0deg, transparent, #5bff45, #5bff45);
         transform-origin: bottom right;
         animation: animate 6s linear infinite;
@@ -41,7 +41,7 @@
         top: -50%;
         left: -50%;
         width: 380px;
-        height: 460px;
+        height: 560px;
         background: linear-gradient(0deg, transparent, #5bff45, #5bff45);
         transform-origin: bottom right;
         animation: animate 6s linear infinite;
