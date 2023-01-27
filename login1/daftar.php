@@ -43,10 +43,10 @@
                     $mail->SMTPAuth=true;
                     $mail->SMTPSecure='tls';
     
-                    $mail->Username='sekolahkarijeneng@gmail.com';
-                    $mail->Password='cphnjcbygasymxiy';
+                    $mail->Username='GmailAnda';
+                    $mail->Password='PasswordAnda';
     
-                    $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng.com');
+                    $mail->setFrom('GmailAnda', 'NamaPerusahaan/ProyekAnda');
                     $mail->addAddress($_POST["email"]);
     
                     $mail->isHTML(true);
@@ -55,7 +55,7 @@
                     <h3>Kode verifikasi akun anda adalah $otp <br></h3>
                     <br><br>
                     <p>Hormat kami</p>
-                    <b>Sekolah Kari Jeneng</b>";
+                    <b>Nama perusahaan / Proyek Anda</b>";
     
                     if(!$mail->send()){
                         ?>
