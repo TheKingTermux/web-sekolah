@@ -1,3 +1,7 @@
+# Website Sekolah
+
+Just an example of school website 
+
 # Login System 
 
 I've updated the login-System more security.
