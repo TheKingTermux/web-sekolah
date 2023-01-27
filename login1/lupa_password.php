@@ -43,11 +43,11 @@ session_start()
             $mail->SMTPSecure='tls';
 
             // h-hotel account
-            $mail->Username='sekolahkarijeneng@gmail.com';
-            $mail->Password='cphnjcbygasymxiy';
+            $mail->Username='GmailAnda';
+            $mail->Password='PasswordAnda';
 
             // send by h-hotel email
-            $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng.com');
+            $mail->setFrom('GmailAnda', 'NamaPerusahaan/ProyekAnda');
             // get email from input
             $mail->addAddress($_POST["email"]);
             //$mail->addReplyTo('lamkaizhe16@gmail.com');
@@ -60,7 +60,7 @@ session_start()
             <p>Silahkan masukkan Kode verifikasi pemulihan akun anda $otp</p>
             <br><br>
             <p>Hormat Kami</p>
-            <b>Sekolah Kari Jeneng</b>";
+            <b>Nama perusahaan / Proyek Anda</b>";
 
             if(!$mail->send()){
                 ?>
